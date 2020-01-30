@@ -349,7 +349,22 @@ If you do not already have them, macOS will prompt you to first install Xcode Co
 
 
 # Ref## 
-  
+ [dionysopoulos](https://www.dionysopoulos.me/set-up-nginx-and-php-for-development-on-mac-os-x/)
+ [sylvaindurand](https://www.sylvaindurand.org/setting-up-a-nginx-web-server-on-macos/)
+ [dionysopoulos](https://www.dionysopoulos.me/custom-apache-and-php-server-on-macos-the-definitive-2019-edition/)
+ [dionysopoulos](https://www.dionysopoulos.me/set-up-nginx-and-php-for-development-on-mac-os-x/)
+ [atlassian](https://magento2.atlassian.net/wiki/spaces/m1wiki/pages/14024849/Configuring+nginx+for+Magento+1.x)
+ 
+ 
+
+
+
+
+
+
+
+
+
 
    Thank you for watching guide.If you have any questions about this practice, 
    please feel free to leave a comment or hangout:matinict@gmail.com.
