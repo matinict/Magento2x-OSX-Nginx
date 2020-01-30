@@ -186,6 +186,11 @@ If you do not already have them, macOS will prompt you to first install Xcode Co
       sudo rm -rf /Library/Receipts/mysql*
       sudo rm -rf /Library/Receipts/MySQL*
       sudo rm -rf /private/var/db/receipts/*mysql*
+  ### Problem1: mysqld: Can't read dir of '/usr/local/etc/my.cnf.d' (OS errno 2 - No such file or directory)
+      mkdir /usr/local/etc/my.cnf.d
+     
+  ### problem : Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)
+      
   
 
           
