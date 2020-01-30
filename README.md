@@ -88,20 +88,27 @@ If you do not already have them, macOS will prompt you to first install Xcode Co
       
    # 1.4- Install MySQL 5.7  
    
+    Install mysql with homebrew :
+      $ brew install mysql
+      Start mysql service with homebrew :
+      $ brew services start mysql
+      The default username for mysql is root and there is no password.
+      You can set a password this way :
+      $ mysqladmin -u root password ‘yourpassword’
+      Access mysql :
+      § mysql -u root -p
+      And then create a Database, quit with \q :
+      mysql > CREATE DATABASE mywordpressdb;
+      mysql > \q
     
-    
-           
-     Install MySQL using the apt command below:
-          sudo apt install mysql-server mysql-client -y
-          enter the password for the root user: giaphugroup
-          service mysql start
-          mysql_secure_installation
-          SHOW VARIABLES LIKE "%version%"; 
-          sudo mysql -u root -p
- 
-     After the MySQL installation is complete, start the MySQL service and enable it to launch everytime at system boot.
-          systemctl start mysql
-          systemctl enable mysql
+        OR If you want to use mariadb  Install MySQL using the apt command below: We will now install and launch MariaDB:
+
+      brew install mariadb
+      brew services start mariadb
+
+      Finally, complete the installation by choosing a root password for MySQL:
+      mysql_secure_installation
+  
 
           
    # 1.5- Install phpMyAdmin
