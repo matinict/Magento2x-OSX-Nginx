@@ -48,13 +48,34 @@ If you do not already have them, macOS will prompt you to first install Xcode Co
     
    # 1.1- Install the softwares: [Advanced Nginx](https://github.com/matinict/Magento2x-OSX-Nginx/blob/master/nginx.md) 
     
-    
-      apt-get update
-      apt-get -y install git wget curl nano unzip sudo vim net-tools openssh-server
-      - Install the Nginx 1.10.x: 
-      apt-get -y install nginx
-      service nginx start
-      nginx -v
+   Although Apache is natively included with macOS, we propose here to install Nginx, particularly lightweight and easily configurable.
+
+        Installation
+        To install and launch Nginx on startup, we use:
+
+        brew install nginx
+        sudo brew services start nginx
+   Although we musn't use sudo with brew install, it is necessary to use it to launch Nginx if we want to use the the default port 80.
+
+        Configuration
+ We want to store our web site in the folder of our choice, and access to the URL http://localhost/. To do this, edit the configuration file:
+
+        nano /usr/local/etc/nginx/nginx.conf
+  To begin, we will have to give to Nginx the permission to access our files and avoid a nasty 403 Forbidden error. To do so, we change the first line, where <user> is your username:
+
+        user <user> staff;
+ Then, to add a new website, we will add a new section inside the http directive:
+
+        server {
+          listen 80;
+          server_name localhost;
+          root /Users/<user>/Documents/path/to/your/website;
+          index index.html index.htm;
+        }
+   
+   We then restart Nginx in order to take this changes into account:
+
+        sudo brew services restart nginx
       
    # 1.2- Install PHP 7.2.x and the required PHP extensions: 
    
@@ -356,11 +377,11 @@ If you do not already have them, macOS will prompt you to first install Xcode Co
 
 
 # Ref## 
- [dionysopoulos](https://www.dionysopoulos.me/set-up-nginx-and-php-for-development-on-mac-os-x/)
- [sylvaindurand](https://www.sylvaindurand.org/setting-up-a-nginx-web-server-on-macos/)
- [dionysopoulos](https://www.dionysopoulos.me/custom-apache-and-php-server-on-macos-the-definitive-2019-edition/)
- [dionysopoulos](https://www.dionysopoulos.me/set-up-nginx-and-php-for-development-on-mac-os-x/)
- [atlassian](https://magento2.atlassian.net/wiki/spaces/m1wiki/pages/14024849/Configuring+nginx+for+Magento+1.x)
+ - [dionysopoulos](https://www.dionysopoulos.me/set-up-nginx-and-php-for-development-on-mac-os-x/)
+ - [sylvaindurand](https://www.sylvaindurand.org/setting-up-a-nginx-web-server-on-macos/)
+ - [dionysopoulos](https://www.dionysopoulos.me/custom-apache-and-php-server-on-macos-the-definitive-2019-edition/)
+ - [dionysopoulos](https://www.dionysopoulos.me/set-up-nginx-and-php-for-development-on-mac-os-x/)
+ - [atlassian](https://magento2.atlassian.net/wiki/spaces/m1wiki/pages/14024849/Configuring+nginx+for+Magento+1.x)
  
  
 
