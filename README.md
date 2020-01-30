@@ -15,8 +15,29 @@ My Development Environment:
  I am going to show everybody the best practice, How to install Magento 2.3x on OSX with Nginx.
  I will show everybody steps by step to install Magento 2.3x on OSX :10.13.6 with Nginx 1.10.x, PHP 7.2.x and MySQL 5.7.
  
+ If you want to start developing PHP applications, or merely work on your PHP-based site off-line, on Mac OS X you can easily do so. In this how-to we’ll see how you can set up NginX, a high performance web server, with the PHP version shipped with Mac OS X itself to create a local web server. In case you’re wondering, you can of course use it in parallel with MAMP, XAMPP or even the multi-PHP version server I’ve described in an earlier post.
+
+If you want to start developing PHP applications, or merely work on your PHP-based site off-line, on Mac OS X you can easily do so. In this how-to we’ll see how you can set up NginX, a high performance web server, with the PHP version shipped with Mac OS X itself to create a local web server. In case you’re wondering, you can of course use it in parallel with MAMP, XAMPP or even the multi-PHP version server
+
+
+ 
 
 Okie, let's go.Let's do this practice, you need to follow steps by step:
+
+# Step 0: Install HomeBrew
+    If you don’t have HomeBrew already you need to install it per its instructions. HomeBrew is a package manager for Mac OS X which lets you install a lot of software without hunting around the Internet for a suitable package file.
+    HomeBrew is a package manager for macOS, that allows to easily install various Unix applications.
+
+To install, simply execute the command shown on the official website:
+Open the “Terminal” application, found in /Applications/Utilities/
+Enter the following command into a single line of the terminal:
+
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+If you do not already have them, macOS will prompt you to first install Xcode Command Line Tools.
+    
 
 # Step 1: Installing the server. 
 
