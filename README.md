@@ -107,7 +107,7 @@ If you do not already have them, macOS will prompt you to first install Xcode Co
       composer --version
       
       
-   # 1.4- Install MySQL 5.7  [Download & Install](https://razorsql.com/articles/mysql_mac_os_x.html)
+   # 1.4- Install MySQL 8.0.19  [Download & Install](https://razorsql.com/articles/mysql_mac_os_x.html)
    
    [MySQL Community Server Download](https://dev.mysql.com/downloads/mysql/)
    Click the Download button next to the first option, the DMG archive download. At the time of this writing, version 8 of the community server is the default download.
