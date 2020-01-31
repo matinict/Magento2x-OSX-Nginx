@@ -107,30 +107,51 @@ If you do not already have them, macOS will prompt you to first install Xcode Co
       composer --version
       
       
-   # 1.4- Install MySQL 5.7  
+   # 1.4- Install MySQL 5.7  [Download & Install](https://razorsql.com/articles/mysql_mac_os_x.html)
    
-    Install mysql with homebrew :
-      $ brew install mysql
-      Start mysql service with homebrew :
-      $ brew services start mysql
-      The default username for mysql is root and there is no password.
-      You can set a password this way :
-      $ mysqladmin -u root password ‘yourpassword’
-      Access mysql :
-      § mysql -u root -p
-      And then create a Database, quit with \q :
-      mysql > CREATE DATABASE mywordpressdb;
-      mysql > \q
+   [MySQL Community Server Download](https://dev.mysql.com/downloads/mysql/)
+   Click the Download button next to the first option, the DMG archive download. At the time of this writing, version 8 of the community server is the default download.
+
+Once the DMG file is downloaded, double-click the DMG file to open the disk image. Once the disk image is opened, a new Finder window will appear with a .pkg file named something like the following:
+
+To install MySQL, do the following steps:
+
+1. Double-click the .pkg file. This will launch the MySQL installer
+
+2. Continue with the default options. At one point during the installation, the installer will ask whether to use strong password encryption or legacy password encryption. Some MySQL tools do not yet support strong password encryption. If the tools you are using to connect to MySQL do not support strong password encryption, select the legacy password encryption option. Note that RazorSQL supports strong password encryption.
+
+3. Make sure to enter a password for the root MySQL user when prompted, and select the "Start MySQL Server once the installation is complete" option as well.
+When the installer completes your MySQL server will be installed and running on your Mac. Once you have gotten to this point, you have a running MySQL server with one user - the root user - and the default database named mysql. Now it is time to connect to your MySQL database, create a user, and create a database.
+
+To get connected to your MySQL database, you can use a tool like RazorSQL. RazorSQL can be downloaded from the Download link on the header at the top of this page. Once RazorSQL is downloaded and installed, do the following to connect to your MySQL database:
+
+1. Select the Connections -> Add Connection Profile menu option
+
+2. Select MySQL as the database type and click "Continue"
+
+3. Enter any name you wish for the connection profile name and enter a name for the profile folder if desired
+
+4. For the Login, enter root. For the password, enter the root password you gave to the MySQL installer
+
+5. For the Host or IP Address, enter localhost
+
+6. For the database name, enter mysql
+
+7. Click Connect
+At this point, you should be connected to your local MySQL database in RazorSQL.
+
+After connecting, you can create a new database by doing the following:
+
+1. Select the DB Tools - Create -> Create Database menu option
+
+2. Enter a database name and then click "Generate SQL"
+
+3. Click the Execute SQL button to create the database.
+If you would like to manually create the MySQL database, execute the following command. This creates a new database named sample with UTF8 support:
+
+create database sample character set 'utf8mb4'
+   
     
-        OR If you want to use mariadb  Install MySQL using the apt command below: We will now install and launch MariaDB:
-
-      brew install mariadb
-      brew services start mariadb
-
-      Finally, complete the installation by choosing a root password for MySQL:
-      mysql_secure_installation
-      
-      Open a terminal window
    ## Remove MySQL completely
    
    ### Way 1
