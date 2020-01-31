@@ -281,7 +281,7 @@ create database sample character set 'utf8mb4'
     - cd magento2.3.2
     find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
     find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
-    chown -R :www-data .
+    chown -R :staff .
     chmod u+x bin/magento
     php bin/magento setup:di:compile
     - Create a new virtual host for accessing to the Magento2.3.x site
@@ -321,7 +321,7 @@ create database sample character set 'utf8mb4'
            cd magento.lan
           find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
           find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
-          chown -R :www-data .
+          chown -R :staff .
           chmod u+x bin/magento
           php bin/magento setup:di:compile
           
